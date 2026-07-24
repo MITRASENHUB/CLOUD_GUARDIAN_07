@@ -1,0 +1,10 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "SUBSCRIPTION_ID": "7573a241-c33d-4d26-ba06-e07aaa7056c2",
+    "RESOURCE_GROUP": "rg-cloudguardian-dev",
+    "STORAGE_ACCOUNT": "cgstorage2026demo01"
+  }
+}
