@@ -1,0 +1,100 @@
+# CloudGuardian .gitignore
+
+# Sensitive Data - NEVER COMMIT
+*.pem
+*.key
+*credentials*
+*secrets*
+.env
+.env.local
+terraform.tfvars
+
+# AWS
+.aws/
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform/
+.terraform.lock.hcl
+crash.log
+crash.*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+PIPFILE.lock
+
+# Virtual Environments
+venv/
+.venv/
+ENV/
+env/
+.conda/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ML Models (large files)
+*.pkl
+*.h5
+*.joblib
+models/*.pkl
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# CSPM Scan Outputs (too large)
+cspm-scans/prowler/outputs/*.json
+cspm-scans/prowler/outputs/*.csv
+cspm-scans/steampipe/outputs/*.json
+cspm-scans/scoutsuite/outputs/*.html
+
+# Keep only summary files
+!cspm-scans/prowler/outputs/README.md
+!cspm-scans/steampipe/outputs/README.md
+!cspm-scans/scoutsuite/outputs/README.md
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# OS
+Thumbs.db
+*.tmp
+
+# Large data files
+data/raw/
+data/processed/*.csv
+
+# Documentation builds
+docs/_build/

@@ -1,0 +1,57 @@
+# Prowler Configuration for CloudGuardian
+# AWS Account: 782700525901
+
+aws:
+  profile: default
+  regions:
+    - us-east-1
+  account_id: "782700525901"
+
+# Compliance frameworks to check
+compliance:
+  - iso27001_2022
+  - hipaa
+  - pci_dss_v4_0
+
+# Output configuration
+output:
+  formats:
+    - html
+    - json
+    - csv
+    - json-ocsf
+  directory: "./outputs"
+  filename: "prowler-output"
+
+# Severity filter
+severity:
+  - critical
+  - high
+  - medium
+  - low
+
+# Status filter
+status:
+  - FAIL
+  - PASS
+  - WARNING
+
+# Checks to exclude (optional)
+exclude_checks: []
+
+# Services to scan
+services:
+  - s3
+  - ec2
+  - rds
+  - iam
+  - cloudtrail
+  - vpc
+  - lambda
+  - kms
+
+# Additional options
+options:
+  send_sh_only_fails: false
+  verbose: true
+  no_banner: false

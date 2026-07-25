@@ -1,0 +1,62 @@
+# CSPM Tools Configuration
+
+cspm_tools:
+  # Prowler Configuration
+  prowler:
+    enabled: true
+    version: "4.0+"
+    output_formats:
+      - html
+      - json
+      - csv
+    output_directory: "cspm-scans/prowler/outputs"
+    checks:
+      - all  # Run all checks
+    severity_filter:
+      - critical
+      - high
+      - medium
+      - low
+    compliance_frameworks:
+      - iso27001_2022
+      - hipaa
+      - pci_dss_v4_0
+    
+  # Steampipe Configuration
+  steampipe:
+    enabled: true
+    version: "0.21+"
+    output_directory: "cspm-scans/steampipe/outputs"
+    mods:
+      - "aws_compliance"
+      - "aws_insights"
+    benchmarks:
+      - "iso27001_2022"
+      - "hipaa_security"
+      - "pci_dss_v4_0"
+    export_format: "csv"
+  
+  # ScoutSuite Configuration
+  scoutsuite:
+    enabled: true
+    version: "5.14+"
+    output_directory: "cspm-scans/scoutsuite/outputs"
+    report_format: "html"
+    
+# Consolidated Findings
+consolidation:
+  output_file: "cspm-scans/consolidated/consolidated-findings.json"
+  deduplication: true
+  normalization_schema: "ocsf"  # Open Cybersecurity Schema Framework
+  
+# Scheduling (for automated scans)
+scheduling:
+  enabled: false
+  cron: "0 2 * * *"  # Daily at 2 AM UTC
+  
+# Notifications
+notifications:
+  enabled: false
+  channels:
+    - email
+  email: "team@cloudguardian.example.com"

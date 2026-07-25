@@ -1,0 +1,47 @@
+# AWS Configuration for CloudGuardian
+# Account: Cloud_Guard (782700525901)
+
+aws:
+  account_id: "782700525901"
+  account_name: "Cloud_Guard"
+  region: "us-east-1"  # Change as needed
+  profile: "default"
+  
+  # Regions to scan (multi-region support)
+  scan_regions:
+    - us-east-1
+    - us-west-2
+  
+  # Tags for all resources
+  tags:
+    Project: "CloudGuardian"
+    Environment: "Lab"
+    Team: "CSPM-Team"
+    Purpose: "Capstone-Security-Research"
+    ManagedBy: "Terraform"
+
+# Free Tier Limits (to avoid charges)
+free_tier_limits:
+  ec2:
+    instance_type: "t2.micro"
+    max_instances: 2
+    max_hours_per_month: 750
+  
+  rds:
+    instance_class: "db.t2.micro"
+    allocated_storage: 20  # GB
+    backup_retention: 7
+  
+  s3:
+    max_storage_gb: 5
+    max_requests: 20000
+  
+  lambda:
+    max_invocations: 1000000
+    max_compute_seconds: 400000
+
+# Cost Control
+cost_alerts:
+  enabled: true
+  budget_usd: 10
+  alert_threshold_percent: 80

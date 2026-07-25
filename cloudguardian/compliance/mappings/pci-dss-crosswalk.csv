@@ -1,0 +1,20 @@
+finding_check_id,framework,control_id,control_title,requirement,mapping_strength,notes
+s3_bucket_public_access,PCI-DSS v4.0,1.2.1,Restrict inbound/outbound traffic,Restrict traffic to only that which is necessary,Direct,Public S3 violates network segmentation
+s3_bucket_public_access,PCI-DSS v4.0,1.3,Prohibit direct public access,Prohibit direct public access between the Internet and any system component in the cardholder data environment,Direct,Public storage in CDE
+s3_bucket_default_encryption,PCI-DSS v4.0,3.4,Render PAN unreadable,Render Primary Account Number (PAN) unreadable using strong cryptography,Direct,Storage encryption for cardholder data
+s3_bucket_default_encryption,PCI-DSS v4.0,3.5,Protect cryptographic keys,Document and implement procedures to protect keys used to secure stored cardholder data,Partial,Key management for encryption
+ec2_ebs_volume_encryption,PCI-DSS v4.0,3.4,Render PAN unreadable,Encryption of compute storage,Direct,Compute encryption
+rds_instance_storage_encrypted,PCI-DSS v4.0,3.4,Render PAN unreadable,Database encryption,Direct,Database encryption
+rds_instance_publicly_accessible,PCI-DSS v4.0,1.3,Prohibit direct public access,Public database access prohibited,Direct,CDE network isolation
+ec2_securitygroup_allow_ingress_from_internet_to_any_port,PCI-DSS v4.0,1.2,Configuration standards for network security controls,Restrict traffic based on business need,Direct,Network security controls
+ec2_securitygroup_allow_ingress_from_internet_to_any_port,PCI-DSS v4.0,1.3,Prohibit direct public access,Public access to CDE prohibited,Direct,Public exposure to sensitive systems
+cloudtrail_multi_region_enabled,PCI-DSS v4.0,10.1,Audit logs for all system components,Implement audit trails to link all access to system components,Direct,Comprehensive audit logging
+cloudtrail_log_file_validation_enabled,PCI-DSS v4.0,10.5,Secure audit trails,Audit trail files must be protected from tampering,Direct,Log integrity
+s3_bucket_server_access_logging_enabled,PCI-DSS v4.0,10.1,Audit logs,Access logging for CDE storage,Direct,Storage access audit
+rds_instance_backup_enabled,PCI-DSS v4.0,3.1,Data retention and disposal,Data retention policy implementation,Partial,Backup for data availability
+s3_bucket_versioning_enabled,PCI-DSS v4.0,10.5.3,File integrity monitoring,Data integrity protection,Direct,Version-based integrity
+iam_policy_attached_only_to_group_or_roles,PCI-DSS v4.0,7.1,Limit access to least privilege,Access to system components must be limited to those with a legitimate business need,Direct,Least privilege
+iam_policy_attached_only_to_group_or_roles,PCI-DSS v4.0,7.2,Establish an access control system,Deny all approach with explicit allow,Direct,Access control model
+iam_user_accesskey_unused,PCI-DSS v4.0,8.2.4,Change passwords quarterly,Change user passwords at least every 90 days,Direct,Credential rotation
+iam_user_mfa_enabled_console_access,PCI-DSS v4.0,8.3,Multi-factor authentication,MFA for all users accessing CDE,Direct,MFA requirement
+iam_root_mfa_enabled,PCI-DSS v4.0,8.3.1,MFA for administrative access,MFA for all non-console administrative access,Direct,Administrative MFA

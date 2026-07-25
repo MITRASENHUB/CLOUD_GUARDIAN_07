@@ -1,0 +1,23 @@
+finding_check_id,framework,control_id,control_title,requirement,mapping_strength,notes
+s3_bucket_public_access,ISO27001:2022,A.5.10,Acceptable use of information,Information and other assets shall be identified and rules for acceptable use shall be defined,Direct,S3 bucket public exposure violates data classification
+s3_bucket_public_access,ISO27001:2022,A.8.2,Information classification,Information shall be classified according to information security needs of the organization,Direct,Public data exposure indicates classification failure
+s3_bucket_public_access,ISO27001:2022,A.8.24,Use of cryptography,Rules for the effective use of cryptography shall be defined and implemented,Partial,Encrypted buckets provide defense-in-depth
+ec2_securitygroup_allow_ingress_from_internet_to_any_port,ISO27001:2022,A.8.20,Networks controls,Networks and network services shall be secured managed and controlled,Direct,Overly permissive network rules
+ec2_securitygroup_allow_ingress_from_internet_to_any_port,ISO27001:2022,A.8.21,Security of network services,Security mechanisms service levels and management requirements of network services shall be identified,Direct,Network services must have security controls
+ec2_ebs_volume_encryption,ISO27001:2022,A.8.24,Use of cryptography,Rules for the effective use of cryptography shall be defined and implemented,Direct,Encryption at rest requirement
+rds_instance_publicly_accessible,ISO27001:2022,A.8.20,Networks controls,Networks and network services shall be secured managed and controlled,Direct,Database exposure to internet
+rds_instance_publicly_accessible,ISO27001:2022,A.8.23,Web filtering,Access to external websites shall be managed,Partial,Public database bypasses network controls
+rds_instance_backup_enabled,ISO27001:2022,A.8.13,Information backup,Backup copies of information software and systems shall be maintained and regularly tested,Direct,Automated backups required
+rds_instance_storage_encrypted,ISO27001:2022,A.8.24,Use of cryptography,Rules for the effective use of cryptography shall be defined and implemented,Direct,Storage encryption at rest
+s3_bucket_versioning_enabled,ISO27001:2022,A.8.13,Information backup,Backup copies of information software and systems shall be maintained,Direct,Versioning provides data recovery capability
+s3_bucket_default_encryption,ISO27001:2022,A.8.24,Use of cryptography,Rules for the effective use of cryptography shall be defined,Direct,Data at rest encryption
+s3_bucket_server_access_logging_enabled,ISO27001:2022,A.8.15,Logging,Logs recording activities exceptions faults and events shall be produced stored protected and analyzed,Direct,Access logging for audit trail
+iam_policy_attached_only_to_group_or_roles,ISO27001:2022,A.5.15,Access control,Rules to control physical and logical access to information shall be established,Direct,Least privilege principle
+iam_policy_attached_only_to_group_or_roles,ISO27001:2022,A.5.16,Identity management,Full life cycle of identities shall be managed,Partial,Wildcard permissions violate identity management
+iam_user_accesskey_unused,ISO27001:2022,A.5.17,Authentication information,Allocation and management of authentication information shall be controlled,Direct,Credential lifecycle management
+iam_user_accesskey_unused,ISO27001:2022,A.5.18,Access rights,Access rights to information shall be provisioned reviewed modified and removed,Partial,Regular access review required
+cloudtrail_multi_region_enabled,ISO27001:2022,A.8.15,Logging,Logs recording activities shall be produced stored protected and analyzed,Direct,Comprehensive audit logging
+cloudtrail_log_file_validation_enabled,ISO27001:2022,A.8.15,Logging,Log integrity must be maintained,Direct,Log tampering prevention
+cloudtrail_log_file_validation_enabled,ISO27001:2022,A.8.16,Monitoring activities,Networks systems and applications shall be monitored for anomalous behavior,Partial,Log integrity supports monitoring
+iam_root_mfa_enabled,ISO27001:2022,A.5.17,Authentication information,Multi-factor authentication for privileged accounts,Direct,MFA for root account
+iam_user_mfa_enabled_console_access,ISO27001:2022,A.5.17,Authentication information,MFA for all users with console access,Direct,User-level MFA enforcement

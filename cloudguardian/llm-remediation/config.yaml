@@ -1,0 +1,45 @@
+# LLM Configuration for CloudGuardian
+
+llm:
+  # Provider selection
+  # Options: 'gpt-5.2' (OpenAI), 'claude-sonnet-4.6' (Anthropic)
+  provider: 'gpt-5.2'
+  
+  # Emergent Universal Key (automatically loaded from environment)
+  use_emergent_key: true
+  
+  # Model parameters
+  temperature: 0.3  # Lower = more deterministic
+  max_tokens: 2000
+  top_p: 0.9
+  
+  # Retry logic
+  max_retries: 3
+  timeout: 30
+
+# Output configuration
+output:
+  formats:
+    - json
+    - markdown
+  directory: './outputs'
+  
+# Verification
+verification:
+  enabled: true
+  min_confidence: 0.7
+  require_manual_review_for_critical: true
+
+# Prompt engineering
+prompt:
+  include_examples: true
+  include_compliance: true
+  include_terraform: true
+  redact_sensitive_data: true
+
+# Logging
+logging:
+  level: 'INFO'
+  log_file: './outputs/llm-interactions.log'
+  log_prompts: true
+  log_responses: true
