@@ -1,0 +1,11 @@
+AWS finding / Steampipe check,Why it matters,ISO 27001 area,CVSS,Exposure,Blast_Radius,Priority_Score
+S3 bucket without encryption,Data at rest may be exposed if the bucket is compromised.,"Cryptography, asset protection, data security",7,3,3,63
+S3 bucket public access enabled,Data may be publicly readable.,"Access control, information access restriction",2,6,8,96
+Security group open to 0.0.0.0/0 on SSH/RDP,Unrestricted network exposure increases attack surface.,"Network security, access control",5,10,1,50
+Unencrypted EBS volume,Sensitive data stored on disk is not protected.,"Cryptography, secure storage",7,6,10,420
+IAM users with excessive permissions,Users may access more resources than needed.,"Access control, least privilege",1,4,4,16
+Root account used for routine tasks,Higher risk if credentials are exposed.,Privileged access management,1,6,2,12
+CloudTrail not enabled,Security events may not be logged or traceable.,"Logging, monitoring, auditability",7,4,10,280
+MFA not enabled for privileged users,Accounts are easier to compromise.,"Authentication, identity and access management",8,8,8,512
+Unused IAM users still active,Old accounts increase risk of unauthorized access.,"Account lifecycle, access review",6,5,5,150
+Security groups with wide inbound rules,Services may be exposed unnecessarily.,"Network security, secure configuration",1,6,9,54
